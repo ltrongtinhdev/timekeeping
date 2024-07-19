@@ -1,0 +1,16 @@
+version: '3'
+services:
+  nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node_api
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - AZURE_SERVER=$AZURE_SERVER
+      - AZURE_PASSWORD=$AZURE_PASSWORD
+      - AZURE_USERNAME=AZURE_USERNAME
+      - AZURE_DB=$AZURE_DB
+    ports:
+      - "80:3000"
