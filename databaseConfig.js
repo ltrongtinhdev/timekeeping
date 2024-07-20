@@ -4,8 +4,8 @@ const sql = require('mssql')
 const config = {
     user: process.env.AZURE_USERNAME,
     password: process.env.AZURE_PASSWORD,
-    database: process.env.AZURE_PASSWORD,
-    server: process.env.AZURE_DB,
+    database: process.env.AZURE_DB,
+    server: process.env.AZURE_SERVER,
     pool: {
         max: 10,
         min: 0,
@@ -16,6 +16,7 @@ const config = {
         trustServerCertificate: false // change to true for local dev / self-signed certs
     }
 };
+console.log(config)
 const conn = new sql.ConnectionPool(config).connect().then(pool => {
     return pool;
 });
