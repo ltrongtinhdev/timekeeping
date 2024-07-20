@@ -12,5 +12,6 @@ services:
       - AZURE_PASSWORD=$AZURE_PASSWORD
       - AZURE_USERNAME=AZURE_USERNAME
       - AZURE_DB=$AZURE_DB
+      - PORT=$PORT
     ports:
       - "80:3000"
